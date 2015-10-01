@@ -500,8 +500,7 @@ UserSchema.methods.getTransformedData = function(cb) {
   var self = this;
   this.getTasks(function(err, tasks) {
     if(err) return cb(err);
-    self.addTasksToUser(tasks);
-    cb(null, obj);
+    cb(null, self.addTasksToUser(tasks));
   });
 };
 
